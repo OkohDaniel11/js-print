@@ -1,0 +1,1905 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2 ;
+
+}
+/*Keyframes for logo*/
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: end;
+    color: white;
+    padding: 20px;
+}
+
+/*Logo CSS*/
+
+.logo a{
+    padding: 0; 
+    text-decoration: none;
+}
+
+.logo p {
+    position: absolute;
+    top: -10%;
+    left: 2%;
+    color: white;
+    font-size: 90px;
+    padding: 5px;
+    font-family: "Bonheur Royale";
+    background: linear-gradient(90deg, #ff5722, #007BFF, #ffeb3b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+    -webkit-box-reflect: below -60px linear-gradient(transparent, rgba(255, 87, 34, 0.5));
+    animation: gradientMove 3s linear infinite;
+}
+
+/*Navbar CSS*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.navbar ul li{
+    position: relative;
+    list-style: none;
+}
+
+.navbar ul li a{
+    padding: 10px;
+    margin: 2px;
+    font-family: 'Instrument Sans';
+    font-size: 35px;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar ul li a::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: black;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    transition: 0.5s;
+}
+
+.navbar ul li a:hover::after{
+    width: 100%;
+}
+
+/*Sign In/UP Css*/
+
+.reg{
+    gap: 5%;
+}
+
+.registration a{
+    border: white 1px solid;
+    background-color: white;
+    color: black;
+    padding: 9px;
+    margin: 2px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    opacity: 0.75;
+}
+
+.registration a:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+/*Overlay CSS for Pop Up*/
+
+#popupOverlay {
+    display: none;/*hidden until sign in is clicked*/
+    position:fixed;/*fixed positioning*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;/*one layer above the screen*/
+}
+
+/*Pop-up login and Close Pop up*/
+
+.inner{
+    position: fixed;
+    top: 18%;
+    left: 43%;
+    z-index: 1000;/*Makes the login pop up show above the layer*/
+    
+}
+
+.closePopup{
+    background-color: transparent;
+    padding: 10px 15px;
+    margin-top: 10px;
+    color: black;
+    border: none;
+    font-size: 50px;
+    position: absolute;
+    top: -5%;
+    left: 82%;
+}
+
+.closePopup:hover {
+    cursor: pointer;
+    color: red;
+}
+
+/*Pop Up Header*/
+
+.pop-header{
+    display: block;
+    justify-content: space-between;
+}
+
+.pop-header h2{
+    font-size: 35px;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    transform: translate(-50% -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    border: black solid 1px;
+    width: 281px;
+    height: 329px;
+    z-index: 1000;
+}
+
+/*Pop Up Remember/Forget Password*/
+.forget {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forget a {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.forget a:hover {
+    color: cyan;
+}
+
+/*Pop Up Table Input*/
+
+.popinput{
+    padding: 18px;
+    border-radius: 20px;
+    width: 85%;
+}
+
+/*Pop Login & Sign Up CSS*/
+
+.popdirectory {
+    display: flex;
+    justify-content: space-between;
+}
+
+#border-login {
+    background-color: black;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 28px;
+    color: white;
+    transition: 3s;
+}
+
+#border-login:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.popdirectory a {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: 3s;
+}
+
+.popdirectory a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*Search Container Css*/
+
+.search {
+    padding: 40px;
+}
+
+.search-container {
+    text-align: center;
+}
+
+.search-form {
+    margin: 10px;
+    display: inline-table;
+}
+
+.search-form input{
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 15px;
+}
+
+
+.searchbtn {
+    background-color: white;
+    border: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 15px;
+}
+
+.searchbtn:hover {
+    cursor: pointer;
+}
+
+/*hompage image boxes*/
+
+/*Top Two Boxes Css*/
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    padding: 50px;
+}
+
+.boxes .box {
+    width: 342px; /* Prevents boxes from growing too large */
+    height: 434px; /* Ensures reasonable height on smaller screens */
+    text-align: left;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 1s;
+    background-size: cover; /* Ensures the image covers the entire box */
+    background-position: center; /* Centers the image in the box */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.boxes .uno {background-image: url("../imageshompage/IMG_3910.JPG");}
+.boxes .dos {background-image: url("../imageshompage/IMG_3911.JPG");}
+
+.box a {
+    font-family: 'Italiana';
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+.box p {
+    font-family: 'Intrument Sans';
+    font-size: 20px;
+    transition: 1s; 
+}
+
+.boxes .box p:hover {
+    zoom: 1.05;
+}
+
+.boxes .box:hover {
+    scale: 1.05;
+    cursor: pointer;
+}
+
+/*Bottom Two Boxes CSS*/
+
+.boxesdos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    padding-bottom: 80px;
+}
+
+.boxesdos .box {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover; /* Ensures the image covers the entire box */
+    background-position: center; /* Centers the image in the box */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    transition: width 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.tres {
+    background-image: url("../imageshompage/IMG_3912.JPG");
+    width: 382px;
+    height: 382px;
+}
+
+.qautro {
+    background-image: url("../imageshompage/IMG_3913.JPG");
+    width: 640px;
+    height: 382px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* When hovering over the small box, swap the widths */
+
+.tres:hover {
+    width: 640px;
+    cursor: pointer;
+}
+
+.tres:hover + .qautro {
+    width: 382px;
+}
+
+/*written user css*/ 
+.UserBlog {
+    padding-bottom: 150px;
+}
+
+/*toolbar css*/
+.toolbar {
+    position: relative;
+    left: 54.3%;
+    padding: 10px;
+    max-width: 300px;
+    transition: transform 0.5s ease;
+}
+
+.tools {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    border: solid 1px black;
+    width: auto;
+    padding: 5px;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 
+    0 15px 40px rgba(166,173,201,.2);
+}
+
+.tools button {
+    font-size: 13px;
+    border: none;
+    padding: 4px;
+}
+
+.tools button:hover {
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.fa-reorder  {
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.fa-reorder button {
+    position: relative;
+    left: -20%;
+    top: -125%;
+}
+
+/* Position dropdown container */
+.dropdown {
+    position: relative;
+    display: flex;
+}
+
+/* Dropdown content positioned above the button */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    bottom: 100%; /* Moves it above the button */
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Show dropdown when active */
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/* Style dropdown buttons */
+.dropdown-content button {
+    display: flex;
+    width: 100%;
+    border: none;
+    padding: 5px 10px;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown-content button:hover {
+    background-color: #f1f1f1;
+}
+
+/*User Header*/
+
+.userHeader {
+    position: relative;
+    left: 35%;
+    text-align: justify;
+    padding: 15px;
+}
+
+.userHeader h2 {
+    text-transform: capitalize;
+    font-size: 45px;
+}
+
+/*Input writing*/
+.border-writting {
+    position: relative;
+    left: 28.5%;
+    border: solid 1px black;
+    height: 400px;
+    max-width: 800px;
+    overflow: hidden;
+    overflow-y: scroll;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 
+    0 15px 40px rgba(166,173,201,.2);
+}
+
+.border-writting div {
+    height: 400px;
+    max-width: 800px;
+    background-color: white;
+
+}
+
+.border-writting div .editor {
+    padding: 28px;
+}
+
+/*expand css*/
+.fa-expand {
+    position: relative;
+    bottom: 98%;
+    left: 95%;
+    border: solid 1px black;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 
+    0 15px 40px rgba(166,173,201,.2);
+}
+
+.outlinepad {
+    padding: 30px;
+}
+
+.outlinebutt {
+    padding: 15px;
+    font-size: 35px;
+    position: relative;
+    left: 45%;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/*hover button for userblog*/
+
+.border-writting:hover + .toolbar {
+    transform: translateY(-20px); /* Move toolbar up */
+}
+
+
+/*Prev start Css*/
+
+.titlepreviews {
+    text-align: center;
+    padding: 20px;
+    color: black;
+}
+
+.Prev {
+    font-family: 'Italiana';
+    font-size: 80px;
+    text-decoration: underline;
+}
+
+/* Arrow Slider */
+.outline {
+    padding: 18px;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    height: 100%;
+    width: 60px; /* Set a fixed width for consistent click area */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+    position: absolute;
+    z-index: 10; /* Ensure arrows are above the slider */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.un {
+    left: 0; /* Position to the left of the slider */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Correct vertical centering */
+    font-size: 50px;
+}
+
+.do {
+    right: 0; /* Position to the right of the slider */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Correct vertical centering */
+    font-size: 50px;
+}
+
+.outline:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    opacity: 0.65; /* Dim effect on hover */
+    border-radius: 8px; /* Rounded corners for a polished look */
+}
+
+.arrow {
+    position: relative; /* Prevent unexpected shifts */
+    font-size: inherit; /* Match the size of the parent */
+}
+
+
+/*Preview Header Boxes*/
+
+.prevHeadbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Hide content overflowing the container */
+    width: 100%;
+}
+
+.divslidBox {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+}
+
+.slidBox {
+    height: 296px;
+    width: 226px;
+    background-size: cover; /* Ensures the image covers the entire box */
+    background-position: center; /* Centers the image in the box */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.one {background-image: url('../previmage/imageone.PNG');}
+.two {background-image: url('../previmage/imagetwo.PNG');}
+.three {background-image: url('../previmage/imagethree.PNG');}
+.four {background-image: url('../previmage/imagefour.PNG');}
+.five {background-image: url('../previmage/imagefive.PNG');}
+.six {background-image: url('../previmage/imagesix.PNG');}
+.seven {background-image: url('../previmage/imageseven.PNG');}
+.eight {background-image: url('../previmage/imageeight.PNG');}
+.nine {background-image: url('../previmage/imagenine.PNG');}
+.ten {background-image: url('../previmage/imageten.PNG');}
+.eleven {background-image: url('../previmage/imageeleven.PNG');}
+.twelve {background-image: url('../previmage/imagetwelve.PNG');}
+.thirteen {background-image: url('../previmage/imagethirteen.PNG');}
+.fourteen {background-image: url('../previmage/imagefourteen.PNG');}
+.fifteen {background-image: url('../previmage/imagefifteen.PNG');}
+.sixteen {background-color: red;}
+
+/*Prev Middle Header box*/
+
+.prevCentre {
+    padding: 95px;
+    overflow: hidden; /* Hide content overflowing the container */
+    height: 100%;
+}
+
+.topPrev {
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+}
+
+.pin {
+    background-size: cover; /* Ensures the image covers the entire box */
+    background-position: center; /* Centers the image in the box */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    transition: 2s;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.rightBox {
+    height: 302px;
+    width: 650px;
+    background-image: url('../prevmiddleimage/IMG_0234.JPG');
+}
+
+.pin:hover{
+    scale: 1.03;
+    cursor: pointer;
+}
+
+.leftBox {
+    width: 336px;
+    height: 540px;
+    background-image: url('../prevmiddleimage/IMG_0232.JPG');
+    text-align: center;
+}
+
+.leftHeader {
+    padding: 10px;
+    opacity: 0; /* Start hidden */
+    font-size: 50px;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.leftBox:hover .leftHeader {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s; /* Delay for a smoother effect */
+}
+
+/*animation text of topPrev CSS*/
+
+h2 {
+    padding: 5px;
+}
+
+.him {
+    color: white;
+    text-transform: capitalize;
+    font-size: 40px;
+    font-family: 'Italiana';
+}
+
+.twoSec, .oneSec, .threeSec {
+    opacity: 0; /* Start hidden */
+    transform: translateX(-40%); /* Start off-screen */
+    font-size: 50px;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.twoSec{
+    opacity: 0;    
+    position: absolute;
+    top: 33%;
+    left: 25.8%;
+}
+
+.oneSec{
+    opacity: 0;
+    position: absolute;
+    top: 22%;
+    left: 7.8%;
+}
+
+.rightBox:hover .twoSec {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.2s; /* Delay for a smoother effect */
+}
+
+.rightBox:hover .oneSec {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.4s;
+}
+
+.rightBox:hover .threeSec {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.8s;
+}
+
+/* Prev para overlay*/
+
+.paraOverlay {
+    
+    position:fixed;/*fixed positioning*/
+    top: 80%;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;/*one layer above the screen*/
+    text-align: center;
+    transition: .5s ease;
+    opacity:0;
+}
+
+.para {
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.rightBox:hover .paraOverlay {
+    opacity: 1;
+}
+
+.leftBox:hover .paraOverlay {
+    opacity: 1;
+}
+
+.lastlbox:hover .paraOverlay {
+    opacity: 1;
+}
+
+
+/*Middle Prev css*/
+
+.moveUp {
+    position: absolute;
+    top: 118%;
+    left: 19%;
+    z-index: 1000;
+}
+
+
+.middlePrev {
+    display: inline-flex;
+    justify-content: space-evenly;
+    padding: 4px;
+    position: relative;
+    left: 10%;
+    top: 50%;
+    gap: 3%;
+}
+
+.gridPrev {
+    display: grid;
+    gap: 2%;
+}
+
+.boxesss {
+    height: 200px;
+    width: 383px;
+}
+
+.fin {background-image: url('../prevmiddleimage/IMG_0239.JPG');}
+.lin {background-image: url('../prevmiddleimage/IMG_0241.JPG');}
+.rin {background-image: url('../prevmiddleimage/IMG_0242.JPG');}
+
+.kin {
+    height: 625px;
+    width: 268px;
+    background-image: url('../prevmiddleimage/IMG_0236.JPG');
+}
+
+/*Animation for middlePrev*/
+
+.gridBox {
+    opacity: 0; /* Start hidden */
+    overflow: hidden; /* Hide content overflowing the container */
+    transform: translateY(10%); /* Start off-screen */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.boxesss:hover .gridBox {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s; /* Delay for a smoother effect */
+}
+
+.kin:hover .gridBox {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s; /* Delay for a smoother effect */
+}
+
+/*Last Prev CSS*/
+
+.lastPrev {
+    display:flex;
+    justify-content: center;
+    position: relative;
+    right: -20.5%;
+    top: 200%;
+    gap: 1%;
+    padding-top: 20px;
+}
+
+.lastlbox {
+    height: 405px;
+    width: 160px;
+    background-image: url('../prevmiddleimage/IMG_0237.JPG');
+}
+
+.rig {
+    background-image: url('../prevmiddleimage/IMG_0238.JPG');
+}
+
+.lim {
+    padding: 0;
+    color: white;
+    font-size: 30px;
+    font-family: 'Italiana';
+    text-transform: uppercase;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth transition */
+    opacity: 0; /* Start hidden */
+}
+
+.lastlbox:hover .lim {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s; /* Delay for a smoother effect */
+}
+
+
+/*Sign up CSS*/
+
+.signBorder {
+    text-align: center;
+    height: 1200px;
+}
+
+.centreup {
+    text-align: center;
+    border: 1px black solid;
+    width: 50%;
+    padding: 20px 20px 20px 50px;
+    border-radius: 50px;
+    position: absolute;
+    top: 39%;
+    left: 25%;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.Signup-header h1 {
+    font-size: 60px;
+    padding: 5px;
+    font-family: 'Italiana';
+    color: black;
+}
+
+.Signup-header p {
+    font-size: 42px;
+    color: black;
+    font-family: 'Italiana';
+}
+
+.Signup-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 5px;
+    color: black;
+}
+
+.Signup-form .input {
+    padding: 18px;
+    margin: 5px;
+    border-radius: 20px;
+    width: 79%;
+    border: none;
+}
+
+
+/*Password LayOuT CSS*/
+
+.passwordLabel {
+    padding: 10px;
+}
+
+.passwordFlex {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.passwordShape {
+    width: 78.6%;
+    padding: 12px 15px 12px 12px;
+    margin: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: none;
+    border-style: none;
+}
+
+.bckgroundPass {
+    position: absolute;
+    right: 0;
+    background-color: white;
+    padding: 7px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+}
+
+.fa-solid {
+    color: black;
+    font-size: 15px;
+    transition: 0.3s;
+    padding: 5px;
+}
+
+.fa-solid:hover {
+    cursor: pointer;
+    color: cyan;
+
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 25px;
+    background-color: transparent;
+    color: black;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: black;
+    color: cyan;
+}
+
+/*Footer Css*/
+
+/*Footer One*/
+.footerflex {
+    display: flex;
+    justify-content: center;
+    gap: 22.5%;
+    padding: 20px;
+}
+
+.footertable {
+    padding: 20px;
+}
+
+.footertable span {
+    padding: 0px;
+}
+
+.footertable span a {
+    padding: 10px;
+    font-family: 'Instrument Sans';
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footertable span a:hover {
+    cursor: pointer;
+}
+
+/*Social media icon*/
+.socialmedia {
+    padding-top: 20px;
+}
+
+.icons {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 14%;
+}
+
+.icons a {
+    color: black;
+    padding: 20px;
+    border: solid 1px black;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.fa-facebook:hover {
+    background-color: #4267B2;
+    color: white;
+    cursor: pointer;
+}
+
+.fa-twitter:hover{
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+}
+.fa-instagram:hover{
+    background: linear-gradient(to right,#833ab4,#fd1d1d,#fcb045);
+    color: white;
+    cursor: pointer;
+}
+.fa-reddit:hover{
+   background: #ff5700;
+   color: white;
+   cursor: pointer;
+}
+.fa-linkedin:hover{
+    background: #007bb5;
+    color: white;
+    cursor: pointer;
+}
+
+.icons a span{
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: inherit;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.icons a:hover {
+    transform: scale(1.1);
+}
+
+/* Show span on hover */
+.icons a:hover span {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+/*Footer Two*/
+
+
+.footertabletwo {
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+    padding: 15px;
+}
+
+.footertabletwo div p {
+    position: relative;
+    bottom: 23%;
+    right: 0%;
+    border: solid black 1px;
+    background-color: transparent;
+    border-radius: 50px;
+    text-align: center;
+    padding: 10px;
+    color: black;
+    font-family: 'Italiana';
+    font-size: 26px;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+
+#newsLetteremail {
+    border: none;
+    border-radius: 20px;
+    padding: 16.5px;
+    font-family: 'Instrument Sans';
+}
+
+.footertablethree {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.footertablethree input {
+    padding: 10px;
+    font-family: 'Italiana';
+    width: 50%;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 17px;
+    background-color: white;
+    transition: 1s;
+    opacity: 0.75;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.footertablethree input:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+/*About Me CSS*/
+
+/*on Scroll Animation*/
+.hidden  {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 4s;
+    transform: translateX(-100%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+}
+
+
+
+/* Transition delays for delayed elements */
+
+.delay:nth-child(1) {
+    transition-delay: 2s;
+}
+
+.delay:nth-child(2) {
+    transition-delay: 4s;
+}
+
+/* Specific delays for images within flip card front */
+
+.flip-card-container > .flip-card:nth-child(1) .flip-card-front {
+    transition-delay: 0.5s;
+}
+
+.flip-card-container > .flip-card:nth-child(2) .flip-card-front {
+    transition-delay: 2s;
+}
+
+.flip-card-container > .flip-card:nth-child(3) .flip-card-front {
+    transition-delay: 3s;
+}
+
+
+@media (prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+/*About me Header*/
+
+.moveDown{
+    padding-top: 260px;
+}
+
+.aboutMeheadImage {
+    background-image: url('../aboutmeImages/IMG_0254.JPG');
+    background-size: cover; /* Ensures the image covers the entire box */
+    background-position: center; /* Centers the image in the box */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 700px;
+    text-align: center;
+    filter: blur(8px);
+    border: none;
+}
+
+.aboutHeader {
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    top: 70%;
+    left: 28.5%;
+    
+}
+
+
+.aboutHeader h2{
+    color: white;
+    text-transform: uppercase;
+    font-size: 140px;
+    text-decoration: underline;
+    font-family: "Instrument Sans";
+}
+
+/*About Me Middle Content*/
+
+.aboutpara {
+    display: flex;
+    justify-content: center;
+    gap: 18%;
+    padding: 450px 30px 450px 30px;
+}
+
+.aboutpara img {
+    background-size: cover; /* Ensures the image covers the entire box */
+    background-position: center; /* Centers the image in the box */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 450px;
+    width: 400px;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.aboutpara div {
+    height: 200px;
+    width: 468px;
+    color: black;
+    text-align: center;
+    padding: 20px;   
+}
+
+.aboutpara div h2 {
+    font-size: 40px;
+    text-align: center;
+    padding: 5px;
+}
+
+.aboutpara div p {
+    text-align: justify;
+    font-family: 'Instrument Sans';
+    font-size: 30px;
+    padding: 5px;
+}
+
+/*About Us Image Content*/
+
+/* Container to hold multiple flip cards */
+.flip-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2%;
+    padding: 30px;
+    background: transparent;
+}
+
+/* Flip card outer container */
+.flip-card {
+    background-color: transparent;
+    width: 400px;
+    height: 450px;
+    perspective: 1000px; /* Enables 3D effect */
+}
+
+/* Inner container holds both faces */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+/* On hover, flip only the hovered card */
+.flip-card:hover .flip-card-inner {  
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+/* Front and back faces are positioned absolutely */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Front face (Image) */
+.flip-card-front {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front img {
+    width: 400px;
+    height: 450px;
+    background-size: cover; /* Ensures the image covers the entire box */
+    background-position: center; /* Centers the image in the box */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+/* Back face (Text) */
+.flip-card-back {
+    background-color: #000;
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    font-family: 'Instrument Sans';
+}
+
+.flip-card-back h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+}
+
+.flip-card-back p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/*Lower COntent*/
+.aboutcontact-container {
+    padding: 50px 30px 30px 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.aboutcontact {
+    color: black;
+}
+
+.aboutcontact h2 {
+    font-size: 35px;
+    padding: 10px;
+    border: 1px solid black;
+    text-transform: capitalize;
+    border-radius: 50px;
+    transition: 0.5s;
+    opacity: 0.75;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.aboutcontact h2:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: white;
+    color: black;
+    opacity: 1;
+}
+
+/*Pop Up Dislpay/Overlay*/
+
+.aboutcontact-popUp {
+    position: fixed;
+    top: 18%;
+    left: 20%;
+    z-index: 1000;/*Makes the login pop up show above the layer*/
+}
+
+#aboutcontact-inner {
+    display: none;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 40px;
+    padding: 40px 20px 40px 20px;
+    width: 980px;
+    transform: translate(-50% -50%);
+    z-index: 1000;
+}
+
+/*Close Button*/
+.contactButtton {
+    position: absolute;
+    top: -4%;
+    left: 94%;
+}
+
+.contactX {
+    background-color: transparent;
+    padding: 10px 15px;
+    margin-top: 10px;
+    color: white;
+    border: none;
+    font-size: 50px;
+}
+
+.contactX:hover {
+    cursor: pointer;
+    color: cyan;
+}
+
+/*Inner Content of contact PopUp*/
+.contactFlex {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.contactFlex .contactIn {
+    display: grid;
+    text-align: justify;
+    padding: 10px;
+    height: 0px;
+    color: white;
+}
+
+.contactIn p {
+    padding: 10px;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-family: 'Instrument Sans';
+    display: flex;
+    gap: 5%;
+    text-align: justify;
+}
+
+.contactIn p a {
+    color: cyan;
+    text-decoration: none;
+    text-transform: none;
+}
+
+/*Blog Css*/
+
+/*Blog Header */
+.headerflex {
+    display: flex;
+    justify-content: center;
+    gap: 80%;
+    padding: 10px;
+}
+
+/*Sort By CSS*/
+.filterheader {
+    padding: 10px;
+}
+
+.filterheader label {
+    font-size: 19px;
+}
+
+.filterheader select {
+    padding: 6px;
+    cursor: pointer;
+}
+
+/*H1 hEADER*/
+.blogheadder {
+    position: absolute;
+    top: 26%;
+}
+
+.blogheadder h1 {
+    font-size: 60px;
+    text-transform: capitalize;
+}
+
+/*Next Page Css*/
+.nextPage {
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    gap: 5%;
+} 
+
+.nextPage span {
+    background-color: #DCDCDC;
+    border: solid 1px black;
+    text-decoration: none;
+    color: black;
+    font-size: 19px;
+    padding: 6px;
+    transition: 0.3s ease-in;
+    box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+    cursor: pointer;
+}
+
+.page-number.active {
+    background-color: black;
+    color: white;
+}
+
+.nextPage span:hover {
+    background-color: black;
+    color: white;
+}
+
+/*Blog Catalog*/
+
+.blog-catalog{
+    text-align: -webkit-center;
+    padding: 30px;
+}
+.blog-list {
+    display: grid;
+    justify-content: center;
+}
+
+.blog-list div {
+    display: flex;
+    padding: 30px;
+    gap: 2%;
+}
+
+.blog-item {
+    width: 480px;
+    text-align: justify;
+    padding: 30px;
+}
+
+.blog-item h2 {
+    font-size: 1.5em;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: transparent;
+    color: black;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s ease-in;
+}
+
+.read-more:hover {
+    background: black;
+    color: white;
+    border-radius: 50px;
+}
+
+      
+/*Landing Page css*/
+
+#snowCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+@keyframes smoke {
+    0% { opacity: 0; transform: translateY(-40px); filter: blur(8px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* Define the slideUp animation */
+@keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: rotateZ(20deg) translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateZ(20deg) translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) ;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.landContent {
+    height: 900px;
+}
+
+
+.landHeader {
+    position: absolute;
+    top: 54%;
+    left: 42%;
+    font-size: 180px;
+    font-family: "Bonheur Royale";
+    background: linear-gradient(90deg, #ff5722, #007BFF, #ffeb3b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+    transition: 1s;
+    animation: smoke 3s ease-in;
+}
+
+.landHeader:hover {
+    cursor: pointer;
+}
+
+.landRedirect {
+    text-align: center;
+    padding: 40px;
+    height: 150px;
+}
+
+.landRedirect a {
+    font-size: 60px;
+    color: white;
+    transition: 0.9s;
+    font-family: 'Instrument Sans';
+    text-decoration: none;
+    background: black;
+    padding: 20px;
+    border-radius: 48%;
+}
+
+.lanUnderline {
+    height: 5px;
+    width: 139px;
+    background-color: white;
+    position: absolute;
+    bottom: -22%;
+    left: 46.3%;
+    border-radius: 13.8%;
+    opacity: 0;
+    animation: slideLeft 1.5s forwards;
+    animation-delay: 2s;
+}
+
+.landRedirect a:hover {
+    cursor: pointer;
+}
+
+
+
+  
+/* Mobile Devices (max-width: 600px) */
+@media screen and (max-width: 600px) {
+       
+}
+      
+/* Tablets (min-width: 601px) and (max-width: 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+       
+}
+      
+/* Laptops (min-width: 1025px) and (max-width: 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    /*CSS rules for laptops*/
+
+    /*Landing page CSS*/
+
+    .landContent {
+        height: 600px;
+    }
+
+    .landHeader {
+        position: absolute;
+        top: 58%;
+        left: 39%;
+    }
+
+    .lanUnderline {
+        background-color: black;
+        position: absolute;
+        bottom: -44.2%;
+        left: 44.3%;
+    }
+
+    /*Nav Bar and Homepage Css*/
+
+    .navbar ul li a::after{
+        bottom: 1px;
+    }
+    
+    .reg{
+        gap: 8%;
+    }
+    
+    .qautro {
+        background-image: url("../imageshompage/IMG_3913.JPG");
+        width: 545px;
+        height: 382px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    /* When hovering over the small box, swap the widths */
+    
+    .tres:hover {
+        width: 545px;
+        cursor: pointer;
+    }
+
+    /*preview CSS*/
+
+    .moveUp {
+        top: 188.5%;
+        left: 4.1%;
+    }
+
+    .lastPrev {
+        right: -31.5%;
+        top: 200%;
+        gap: 2%;
+    }
+
+    /*Sign Up CSS*/
+    .signBorder {
+        height: 900px;
+        padding-top: 40px;
+    }
+
+    .centreup {
+        top: 33%;
+        left: 22%;
+    }
+
+    /*About Us CSS*/
+    .aboutHeader {
+        top: 90%;
+        left: 18%;
+    }
+
+    .flip-card {
+        height: 400px;
+        width: 320px;
+    }
+
+    .flip-card-front img {
+        height: 400px;
+        width: 320px;
+    }
+
+    .flip-card-container {
+        padding: 10px;
+        gap: 5%;
+    }
+
+    #aboutcontact-inner {
+        width: 800px;
+    }
+
+    .contactButtton {
+        top: -4%;
+        left: 92%;
+    }
+
+    .contactFlex {
+        gap: 2%;
+    }
+
+    .minimap {
+        width: 400px;
+        height: 360px;
+    }
+
+    /*Footer CSS*/
+
+    .footerflex {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        gap: 10.5%;
+        padding: 0;
+    }
+
+    .footertable a{
+        font-size: 10px;
+    }
+
+    .socialmedia {
+        padding: 49px;
+    }
+
+    .icons a {
+        font-size: 15px;
+    }
+
+    .footertabletwo div p {
+        font-size: 25px;
+    }
+
+    .footertabletwo div input {
+        padding: 10px;
+    }
+
+    /*About US css*/
+
+    .headerflex {
+        padding: 10px;
+    }
+
+    .blogheadder {
+        top: 45%;
+    }
+
+    .blog-list {
+        width: auto;
+        overflow: hidden;
+    }
+
+    .blog-list div {
+        width: auto;
+        overflow: hidden;
+        padding: 10px;
+    }
+
+    .blog-list div article h2 {
+        padding: 0;
+        font-size: 19px;
+    }
+
+    .toolbar {
+        position: relative;
+        bottom: -5%;
+        left: 0;
+    }
+
+    .tools {
+        display: flex;
+        justify-content: center;
+        gap: 2%;
+        border: solid 1px black;
+        width: 380px;
+        padding: 5px;
+    }
+
+    .tools button {
+        font-size: 13px;
+        border: none;
+        padding: 4px;
+    }
+
+    .tools button:hover {
+        cursor: pointer;
+        box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+    }
+
+    /*Input writing*/
+    .border-writting {
+        position: relative;
+        left: 28.5%;
+        border: solid 1px black;
+        height: 400px;
+        max-width: 800px;
+        overflow: hidden;
+        box-shadow: 0 5px 10px rgba(154,160,185,.05), 
+        0 15px 40px rgba(166,173,201,.2);
+    }
+
+   .border-writting div {
+        height: 400px;
+        max-width: 800px;
+        background-color: white;
+
+    }
+
+    .border-writting div .editor {
+        padding: 8px;
+    }
+
+
+ 
+}

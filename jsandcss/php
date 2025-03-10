@@ -1,0 +1,24 @@
+<?php
+header("Content-Type: application/json");
+
+$data = json_decode(file_get_contents("php://input"), true);
+$email = $data['email'];
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo json_encode(["success" => false, "message" => "Invalid email format"]);
+    exit;
+}
+
+// Prepare email content
+$subject = "Welcome to Sevi Newsletter!";
+$message = "Thank you for subscribing to the Sevi newsletter! Stay tuned for updates.";
+$headers = "From: newsletter@sevi.com\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8";
+
+// Send email
+if (mail($email, $subject, $message, $headers)) {
+    echo json_encode(["success" => true]);
+} else {
+    echo json_encode(["success" => false, "message" => "Error sending email"]);
+}
+?>
