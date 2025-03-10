@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="keywords" content="">
+        <title>Interactivity</title>
+        <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+        <link rel="shortcut icon" href="./favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="./favicon/site.webmanifest" />
+        <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Instrument Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="jsandcss/main.css">
+    </head>
+    <body>
+        <!--Navbar-->
+        <header>
+            <div class="logo">
+                <a href="index.html" >
+                    <p>Sevi</p>
+                </a>
+            </div>
+            <div class="hamburger-menu" id="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="homepage.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="aboutMe.html">About Me</a>
+                    </li>
+                    <li>
+                        <a href="previews.html">Previews</a>
+                    </li>
+                </ul>
+            </nav>
+            <!--Sign in/up-->
+            <div class="reg">
+                <ul class="registration">
+                   <a href="#" onclick="popUP()">
+                       Sign In
+                   </a>
+                   <a href="signup.html" onclick="popIN()">
+                       Sign up
+                   </a>
+               </ul>
+           </div>
+        </header>
+        <!--Pop-UP-Overlay-->
+        <div id="popupOverlay"></div>
+
+        <!--Pop-Up-Content-->
+        <div class="inner">
+            <div id="popup">
+                <div class="pop-header">
+                    <h2>Login</h2>
+                    <button onclick="closeX()" class="closePopup">&#215;</button>
+                </div>
+                <div class="pop-table">
+                    <input class="popinput" type="email" name="email" placeholder="Enter Email Address!">
+                    <br><br>
+                    <input class="popinput"  type="password" name="password" placeholder="Enter Password!">
+                    <br><br>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Remember</label>
+                    <a href="#">forgot password</a>
+                </div>
+                <br>
+                <div class="popdirectory">
+                    <input type="submit" id="border-login" value="Login!">
+                    <a href="signup.html">Sign up</a>
+                </div>
+            </div>
+        </div>
+        <!--Main Content-->
+        <div class="moveDown">
+            <div class="aboutMeheadImage"> </div> 
+            <div class="aboutHeader hidden">
+                <h2>about us</h2>
+            </div>
+        </div>
+        <div>
+            <div class="aboutpara ">
+                <img src="./aboutmeImagemain/IMG_3988_jpg.JPG" alt="" class="hidden">
+                <div>
+                    <h2 class="delay hidden">Sevi</h2>
+                    <p class="delay hidden">
+                        What we offer is a blog post 
+                        for user to read and be able 
+                        to post their own stuff or experience.
+                        I believe most post will conect with people
+                        who read our stuff. Its our first time doing stuff
+                        like this but we hope you enjoy and 
+                        enjoy your stay.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Flip Card Section-->
+        <div class="flip-card-container">
+            <!-- Flip Card 1 -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front hidden">
+                  <img src="./aboutmeImagemain/IMG_4203_jpg.JPG" alt="Image 1">
+                </div>
+                <div class="flip-card-back">
+                  <div>
+                    <h2>Title 1</h2>
+                    <p>Description for card 1.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Flip Card 2 -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front hidden">
+                  <img src="./aboutmeImagemain/IMG_4055_jpg.JPG" alt="Image 2">
+                </div>
+                <div class="flip-card-back">
+                  <div>
+                    <h2>Title 2</h2>
+                    <p>Description for card 2.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Flip Card 3 -->
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front hidden">
+                  <img src="./aboutmeImagemain/IMG_4164_jpg.JPG" alt="Image 3">
+                </div>
+                <div class="flip-card-back">
+                  <div>
+                    <h2>Title 3</h2>
+                    <p>Description for card 3.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="aboutcontact-container">
+            <div class="aboutcontact">
+                <h2 onclick="contactClick()">contact us</h2>
+            </div>
+        </div>
+        <!--POP UP Content for Contact Us-->
+        <div class="aboutcontact-popUp">
+            <div id="aboutcontact-inner">
+                <div class="contactButtton">
+                    <button onclick="contactX()" class="contactX">&#215;</button>
+                </div>
+                <div class="contactFlex">
+                    <div class="contactIn">
+                        <p>email: <a href="#">Danielokoh09@yahoo.co.uk</a></p>
+                        <p>landline: <span> +01 2455689</span></p>
+                        <p>phone number: <span> +353 872445332</span></p>
+                    </div>
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9519.739211951235!2d-6.410765318778604!3d53.38021600637432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486772b037789b5f%3A0xcd93bd7da0151640!2sPorterstown%2C%20Dublin%2C%20D15%20W566!5e0!3m2!1sen!2sie!4v1740416399979!5m2!1sen!2sie" 
+                        width="500" height="390" style="border:0; border-radius: 30px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);" 
+                        allowfullscreen="" loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade" class="minimap"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer-->
+        <footer>
+            <div class="footerflex">
+                <div class="footertable">
+                    <span>
+                        <a href="#">
+                            Contact
+                        </a>
+                    </span>
+                    <br>
+                    <span>
+                        <a href="#">
+                            Terms and Conditions
+                        </a>
+                    </span>
+                </div>
+                <div class="socialmedia">
+                    <div class="icons">
+                        <a href="#" class="fa fa-facebook"><span>Facebook</span></a>
+                        <a href="#" class="fa fa-twitter"><span>X</span></a>
+                        <a href="#" class="fa fa-instagram"><span>Instagram</span></a>
+                        <a href="#" class="fa fa-reddit"><span>Reddit</span></a>
+                        <a href="#" class="fa fa-linkedin"><span>Linkedin</span></a>
+                    </div>
+                </div>
+                <div class="footertabletwo">
+                    <div>
+                        <p>
+                            NewsLetter!
+                        </p>
+                    </div>
+                    <div >
+                        <input type="email" name="email" id="newsLetteremail" placeholder="Enter Email Address...">
+                        <br>
+                        <div class="footertablethree">
+                            <input type="submit" value="Subscribe!" class="sub" onclick="subscribeUser()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="jsandcss/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="keywords" content="">
+        <title>Interactivity</title>
+        <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+        <link rel="shortcut icon" href="./favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="./favicon/site.webmanifest" />
+        <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Instrument Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+        integrity="sha512-...your-integrity-hash..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="jsandcss/main.css">
+    </head>
+    <body>
+        <!--Navbar-->
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <p>Sevi</p>
+                </a>
+            </div>
+            <div class="hamburger-menu" id="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="homepage.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="aboutMe.html">About Me</a>
+                    </li>
+                    <li>
+                        <a href="previews.html">Previews</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!--Sign up Layout-->
+        <div class="signBorder">
+            <div class="centreup">
+                <form class="Signup-form">
+                    <div class="Signup-header">
+                        <h1>Create your Account</h1>
+                        <p>Start your free 30-day Trial</p>
+                    </div>
+                    <div>
+                        <div class="mailUser">
+                            <div>
+                                <label for="username">Enter a username:</label>
+                            </div>
+                            <input type="text" name="username" id="username" placeholder="Enter your Username" class="input" required>
+                            <br>
+                        </div>
+                        <div class="mailUser">
+                            <div>
+                                <label for="email">Enter email address:</label>
+                            </div>
+                            <input type="email" name="email" id="email" placeholder="Enter your Email Address" class="input" required>
+                            <br>
+                        </div>
+                       
+                    </div>
+                    <div class="passwordLabel">
+                        <label for="password">Enter your password:</label>
+                    </div>
+                    <div class="passwordFlex">
+                        <input type="password" id="password" class="passwordShape" placeholder="Enter your Password" required>
+                        <div class="bckgroundPass" >
+                            <i class="fa-solid fa-eye" onclick="togglePassword('passwordInput', this)"></i> 
+                        </div>
+                    </div>
+                    <div class="passwordLabel">
+                        <label for="confirmPassword">Confirm password:</label>
+                    </div>
+                    <div class="passwordFlex">
+                        <input type="password" id="confirmPassword" class="passwordShape" placeholder="Confirm your Password" required>
+                        <div class="bckgroundPass">
+                            <i class="fa-solid fa-eye" onclick="togglePassword('passwordInput', this)"></i>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+        <!--Footer-->
+        <footer>
+            <div class="footerflex">
+                <div class="footertable">
+                    <span>
+                        <a href="#">
+                            Contact
+                        </a>
+                    </span>
+                    <br>
+                    <span>
+                        <a href="#">
+                            Terms and Conditions
+                        </a>
+                    </span>
+                </div>
+                <div class="socialmedia">
+                    <div class="icons">
+                        <a href="#" class="fa fa-facebook"><span>Facebook</span></a>
+                        <a href="#" class="fa fa-twitter"><span>X</span></a>
+                        <a href="#" class="fa fa-instagram"><span>Instagram</span></a>
+                        <a href="#" class="fa fa-reddit"><span>Reddit</span></a>
+                        <a href="#" class="fa fa-linkedin"><span>Linkedin</span></a>
+                    </div>
+                </div>
+                <div class="footertabletwo">
+                    <div>
+                        <p>
+                            NewsLetter!
+                        </p>
+                    </div>
+                    <div >
+                        <input type="email" name="email" id="newsLetteremail" placeholder="Enter Email Address...">
+                        <div class="footertablethree">
+                            <input type="submit" value="Subscribe!" class="sub" onclick="subscribeUser()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="jsandcss/main.js"></script>
+    </body>
+</html>

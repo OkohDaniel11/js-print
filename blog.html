@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="keywords" content="">
+        <title>Interactivity</title>
+        <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+        <link rel="shortcut icon" href="./favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="./favicon/site.webmanifest" />
+        <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Instrument Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="jsandcss/main.css">
+    </head>
+    <body>
+        <!--Navbar-->
+        <header>
+            <div class="logo">
+                <a href="index.html" >
+                    <p>Sevi</p>
+                </a>
+            </div>
+            <div class="hamburger-menu" id="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="homepage.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="aboutMe.html">About Me</a>
+                    </li>
+                    <li>
+                        <a href="previews.html">Previews</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="reg">
+                 <ul class="registration">
+                    <a href="#" onclick="popUP()">
+                        Sign In
+                    </a>
+                    <a href="signup.html" onclick="popIN()">
+                        Sign up
+                    </a>
+                </ul>
+            </div>
+        </header>
+        <!--Pop-UP-Overlay-->
+        <div id="popupOverlay"></div>
+        <!--Pop-Up-Content-->
+        <div class="inner">
+            <div id="popup">
+                <div class="pop-header">
+                    <h2>Login</h2>
+                    <button onclick="closeX()" class="closePopup">&#215;</button>
+                </div>
+                <div class="pop-table">
+                    <input class="popinput" type="email" name="email" placeholder="Enter Email Address!">
+                    <br><br>
+                    <input class="popinput"  type="password" name="password" placeholder="Enter Password!">
+                    <br><br>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Remember</label>
+                    <a href="#">forgot password</a>
+                </div>
+                <br>
+                <div class="popdirectory">
+                    <input type="submit" id="border-login" value="Login!">
+                    <a href="signup.html">Sign up</a>
+                </div>
+            </div>
+        </div>
+        <!--Search Container-->
+        <div class="search">
+            <div class="search-container">
+                <form action="#" class="search-form" onsubmit="handleSearch(event)">
+                    <input type="search" id="gsearch" placeholder="Search.." name="search" aria-label="Search blogs">
+                    <button type="submit" class="searchbtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div> 
+        </div>
+        <!--Next Page Catalog-->
+        <div class="headerflex">
+            <div class="filterheader">
+                <!-- Sort and Filter Dropdown -->
+                <label for="filter">Sort By:</label>
+
+                <select name="sortby" id="fitleration">
+                    <option value="A-Z">A-Z</option>
+                    <option value="Fitness">Fitness</option>
+                    <option value="Religion">Religion</option>
+                    <option value="Lifestyle">Lifestyle</option>
+                </select>
+            </div>
+            <div class="blogheadder">
+                <h1>blog catalog</h1>
+            </div>
+            <div class="nextPage">
+                <span class="page-number active" data-page="1">1</span>
+                <span class="page-number" data-page="2">2</span>
+                <span class="page-number" data-page="3">3</span>
+                <span class="page-number" data-page="4">4</span>
+            </div>
+        </div>
+        <!--Writtten Links of blog artist-->
+        <section class="blog-catalog">
+            <div class="blog-list" id="blogslist">
+                <!-- Fitness & Health -->
+                <div>
+                    <article class="blog-item" data-category="Fitness">
+                        <h2>🏋️‍♂️ The Best Morning Workouts for Maximum Energy</h2>
+                        <p>
+                            Start your day strong with quick, effective workouts 
+                            that boost energy, improve mood, and enhance productivity.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                    <article class="blog-item" data-category="Fitness">
+                        <h2>🪑 How to Stay Fit While Working a Desk Job</h2>
+                        <p>
+                            Sitting all day? Learn simple exercises and 
+                            habits to prevent stiffness, improve posture, 
+                            and stay active.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                    <article class="blog-item" data-category="Fitness">
+                        <h2>
+                            🍽️ Mindful Eating: Building a Healthy Relationship with Food
+                        </h2>
+                        <p>
+                            Eating isn’t just about nutrition—it’s about mindfulness. 
+                            Learn how to make better food choices without strict dieting.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                </div>
+                <!-- Lifestyle & Personal Growth -->
+                <div>
+                    <article class="blog-item" data-category="Lifestyle">
+                        <h2>🌞 Building the Perfect Morning Routine for Success</h2>
+                        <p>
+                            Mornings set the tone for the day. Discover 
+                            powerful habits to kickstart your day with 
+                            energy, focus, and motivation.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                    <article class="blog-item" data-category="Lifestyle">
+                        <h2>🧘‍♂️ How to Declutter Your Life and Reduce Stress</h2>
+                        <p>
+                            Clutter—both physical and mental—can 
+                            drain your energy. Learn how to simplify 
+                            your space and mind for a more peaceful life.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                    <article class="blog-item" data-category="Lifestyle">
+                        <h2>🤝 The Power of Social Connections: Why Community Matters</h2>
+                        <p>
+                            Loneliness affects mental health. Find 
+                            out how building strong relationships 
+                            can bring happiness and purpose to your life.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                </div>
+                <!-- Religion & Spirituality -->
+                <div>
+                    <article class="blog-item" data-category="Religion">
+                        <h2>🙏 The Power of Gratitude in Everyday Life</h2>
+                        <p>
+                            Practicing gratitude can change your mindset 
+                            and improve your well-being. 
+                            Learn simple ways to be more thankful every day.
+                        </p>
+                        <a href="#" class="read-more">
+                            Read More
+                        </a>
+                    </article>
+                    <article class="blog-item" data-category="Religion">
+                        <h2>🕊️ Meditation and Prayer: Strengthening Your Spiritual Connection</h2>
+                        <p>
+                            Whether through meditation or prayer, 
+                            quieting the mind can bring peace and clarity. 
+                            Explore different practices to deepen your faith.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!--Footer-->
+        <footer>
+            <div class="footerflex">
+                <div class="footertable">
+                    <span>
+                        <a href="#">
+                            Contact
+                        </a>
+                    </span>
+                    <br>
+                    <span>
+                        <a href="#">
+                            Terms and Conditions
+                        </a>
+                    </span>
+                </div>
+                <div class="socialmedia">
+                    <div class="icons">
+                        <a href="#" class="fa fa-facebook"><span>Facebook</span></a>
+                        <a href="#" class="fa fa-twitter"><span>X</span></a>
+                        <a href="#" class="fa fa-instagram"><span>Instagram</span></a>
+                        <a href="#" class="fa fa-reddit"><span>Reddit</span></a>
+                        <a href="#" class="fa fa-linkedin"><span>Linkedin</span></a>
+                    </div>
+                </div>
+                <div class="footertabletwo">
+                    <div>
+                        <p>
+                            NewsLetter!
+                        </p>
+                    </div>
+                    <div >
+                        <input type="email" name="email" id="newsLetteremail" placeholder="Enter Email Address...">
+                        <div class="footertablethree">
+                            <input type="submit" value="Subscribe!" class="sub" onclick="subscribeUser()">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+        <script src="jsandcss/main.js"></script>
+    </body>
+</html>

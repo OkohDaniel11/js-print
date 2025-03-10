@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="keywords" content="">
+        <title>Interactivity</title>
+        <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+        <link rel="shortcut icon" href="./favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="./favicon/site.webmanifest" />
+        <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Instrument Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="jsandcss/main.css">
+    </head>
+    <body>
+        <!--Navbar-->
+        <header>
+            <div class="logo">
+                <a href="index.html" >
+                    <p>Sevi</p>
+                </a>
+            </div>
+            <div class="hamburger-menu" id="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="homepage.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="aboutMe.html">About Me</a>
+                    </li>
+                    <li>
+                        <a href="previews.html">Previews</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="reg">
+                 <ul class="registration">
+                    <a href="#" onclick="popUP()">
+                        Sign In
+                    </a>
+                    <a href="signup.html" onclick="popIN()">
+                        Sign up
+                    </a>
+                </ul>
+            </div>
+        </header>
+        <!--Pop-UP-Overlay-->
+        <div id="popupOverlay"></div>
+
+        <!--Pop-Up-Content-->
+        <div class="inner">
+            <div id="popup">
+                <div class="pop-header">
+                    <h2>Login</h2>
+                    <button onclick="closeX()" class="closePopup">&#215;</button>
+                </div>
+                <div class="pop-table">
+                    <input class="popinput" type="email" name="email" placeholder="Enter Email Address!">
+                    <br><br>
+                    <input class="popinput"  type="password" name="password" placeholder="Enter Password!">
+                    <br><br>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Remember</label>
+                    <a href="#">forgot password</a>
+                </div>
+                <br>
+                <div class="popdirectory">
+                    <input type="submit" id="border-login" value="Login!">
+                    <a href="signup.html">Sign up</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Search Container-->
+        <div class="search">
+            <div class="search-container">
+                <form action="#" class="search-form" onsubmit="handleSearch(event)">
+                    <input type="search" id="gsearch" placeholder="Search.." name="search" aria-label="Search blogs">
+                    <button type="submit" class="searchbtn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div> 
+        </div>
+
+        <!--Div boxes of images-->
+        <div class="boxes">
+            <div class="box uno">
+                <div>
+                    <div>
+                        <h2>
+                            <a href="#">
+                                Health and Fitness
+                            </a>
+                        </h2>
+                        <p>
+                            Sharing my journey to a healthier 
+                            and happier life with simple fitness
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box dos">
+                <div>
+                    <h2 >
+                        <a href="#">
+                            Understanding You
+                        </a>
+                    </h2>
+                    <p>
+                        Reflecting, Personal growth 
+                        and clarity in yourself.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="boxesdos">
+            <div class="box tres" id="tre">
+                <h2>
+                    <a href="#">
+                        God
+                    </a>
+                </h2>
+                <p>
+                    Sharing faith, hope and 
+                    reflections on walking with God.
+                </p>
+            </div>
+            <div class="box qautro" id="qau">
+                <h2>
+                    <a href="#">
+                        LIVIN...
+                    </a>
+                </h2>
+                <p>
+                    Embracing the beauty of everyday 
+                    life and living it to the fullest.
+                </p>
+            </div>
+        </div>
+        <i class="fa-light fa-list"></i>
+
+        <!--Input of User Blog-->
+        <section class="UserBlog">
+            <!--User Header-->
+            <div class="userHeader">
+                <h2>enter your own blog</h2>
+            </div>
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <div class="tools">
+                    <button onclick="formatText('bold')"><b>B</b></button>
+                    <button onclick="formatText('italic')"><i>I</i></button>
+                    <button onclick="formatText('underline')"><u>U</u></button>
+                    <!-- List Dropdown -->
+                    <div class="dropdown">
+                        <i onclick="toggleDropdown('listOptions')" class="fa fa-reorder"></i>
+                        <div id="listOptions" class="dropdown-content">
+                            <button onclick="formatText('insertUnorderedList')">• List</button>
+                            <button onclick="formatText('insertOrderedList')">1. List</button>
+                        </div>
+                    </div>
+                    <!-- Text Alignment Dropdown -->
+                    <div class="dropdown">
+                        <i onclick="toggleDropdown('alignmentOptions')" class="fa fa-align-justify"></i>
+                        <div id="alignmentOptions" class="dropdown-content">
+                            <button onclick="formatText('justifyLeft')">Left</button>
+                            <button onclick="formatText('justifyCenter')">Center</button>
+                            <button onclick="formatText('justifyRight')">Right</button>
+                            <button onclick="formatText('justifyFull')">Justify</button>
+                        </div>
+                    </div>
+                    <button onclick="formatText('createLink')">🔗 Link</button>
+                    <button onclick="saveContent()">💾 Save</button>
+                    <button onclick="clearContent()">🗑 Clear</button>
+                </div>
+            </div>
+            <!--Inner Editor-->
+            <div class="outlinewriting">
+                <div class="border-writting">
+                    <div>
+                        <div id="editor" class="editor" contenteditable="true" >
+                            Start Writing here....
+                        </div>
+                    </div>
+                    <button class="fa fa-expand"></button>
+                </div>
+                <div class="outlinepad">
+                    <button class="outlinebutt">Submit!</button>
+                </div>
+            </div>
+        </section>
+        <!--Footer-->
+        <footer>
+            <div class="footerflex">
+                <div class="footertable">
+                    <span>
+                        <a href="#">
+                            Contact
+                        </a>
+                    </span>
+                    <br>
+                    <span>
+                        <a href="#">
+                            Terms and Conditions
+                        </a>
+                    </span>
+                </div>
+                <div class="socialmedia">
+                    <div class="icons">
+                        <a href="#" class="fa fa-facebook"><span>Facebook</span></a>
+                        <a href="#" class="fa fa-twitter"><span>X</span></a>
+                        <a href="#" class="fa fa-instagram"><span>Instagram</span></a>
+                        <a href="#" class="fa fa-reddit"><span>Reddit</span></a>
+                        <a href="#" class="fa fa-linkedin"><span>Linkedin</span></a>
+                    </div>
+                </div>
+                <div class="footertabletwo">
+                    <div>
+                        <p>
+                            NewsLetter!
+                        </p>
+                    </div>
+                    <div >
+                        <input type="email" name="email" id="newsLetteremail" placeholder="Enter Email Address...">
+                        <div class="footertablethree">
+                            <input type="submit" value="Subscribe!" class="sub" onclick="subscribeUser()">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+        <script src="jsandcss/main.js"></script>
+    </body>
+</html>

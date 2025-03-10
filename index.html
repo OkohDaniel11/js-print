@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="keywords" content="">
+        <title>Interactivity</title>
+        <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+        <link rel="shortcut icon" href="./favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="./favicon/site.webmanifest" />
+        <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Instrument Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="jsandcss/main.css">
+    </head>
+    <body>
+        <!--Navbar-->
+        <header>
+            <div class="logo">
+                <a href="index.html" >
+                    <p>Sevi</p>
+                </a>
+            </div>
+            <div class="hamburger-menu" id="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <nav class="navbar">
+                <ul class="registration">
+                    <a href="#" onclick="popUP()">
+                        Sign In
+                    </a>
+                    <a href="signup.html" onclick="popIN()">
+                        Sign up
+                    </a>
+                </ul>
+            </nav>
+        </header>
+        <!--Pop-UP-Overlay-->
+        <div id="popupOverlay"></div>
+
+        <!--Pop-Up-Content-->
+        <div class="inner">
+            <div id="popup">
+                <div class="pop-header">
+                    <h2>Login</h2>
+                    <button onclick="closeX()" class="closePopup">&#215;</button>
+                </div>
+                <div class="pop-table">
+                    <input class="popinput" type="email" name="email" placeholder="Enter Email Address!">
+                    <br><br>
+                    <input class="popinput" type="password" name="password" placeholder="Enter Password!">
+                    <br><br>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Remember</label>
+                    <a href="#">forgot password</a>
+                </div>
+                <br>
+                <div class="popdirectory">
+                    <input type="submit" id="border-login" value="Login!">
+                    <a href="signup.html">Sign up</a>
+                </div>
+            </div>
+        </div>
+        <canvas id="snowCanvas"></canvas>
+        <!--Main Content-->
+        <div class="landContent">
+            <div >
+                <div>
+                    <div class="landHeader">Sevi</div>
+                </div>
+            </div>
+        </div>
+        <!--Main Content Redirect Page-->
+        <div>
+            <div>
+                <div class="landRedirect">
+                    <a href="homepage.html" class="lans">
+                        Enter
+                        <div class="lanUnderline"></div>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        <!--Footer-->
+        <footer>
+            <div class="footerflex">
+                <div class="footertable">
+                    <span>
+                        <a href="#">
+                            Contact
+                        </a>
+                    </span>
+                    <br>
+                    <span>
+                        <a href="#">
+                            Terms and Conditions
+                        </a>
+                    </span>
+                </div>
+                <div class="socialmedia">
+                    <div class="icons">
+                        <a href="#" class="fa fa-facebook"><span>Facebook</span></a>
+                        <a href="#" class="fa fa-twitter"><span>X</span></a>
+                        <a href="#" class="fa fa-instagram"><span>Instagram</span></a>
+                        <a href="#" class="fa fa-reddit"><span>Reddit</span></a>
+                        <a href="#" class="fa fa-linkedin"><span>Linkedin</span></a>
+                    </div>
+                </div>
+                <div class="footertabletwo">
+                    <div>
+                        <p>
+                            NewsLetter!
+                        </p>
+                    </div>
+                    <div >
+                        <input type="email" name="email" id="newsLetteremail" placeholder="Enter Email Address...">
+                        <div class="footertablethree">
+                            <input type="submit" value="Subscribe!" class="sub" onclick="subscribeUser()">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+        <script>
+            function popUP() {
+                document.getElementById('popupOverlay').style.display = 'block';
+                document.getElementById('popup').style.display = 'block';
+                //localStorage.setItem('popupVisible', 'true');
+            }
+
+            function closeX() {
+                document.getElementById('popupOverlay').style.display = 'none';
+                document.getElementById('popup').style.display = 'none';
+            }
+
+            document.getElementById('popupOverlay').addEventListener('click', closeX);
+
+            //Snowflakes Animations
+            const canvas = document.getElementById("snowCanvas");
+            const ctx = canvas.getContext("2d");
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+
+            // Adjust canvas size on window resize
+            window.addEventListener('resize', () => {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+            });
+
+            // Create a new snowflake starting slightly above the viewport
+            function createSnowflake() {
+                return {
+                    x: Math.random() * width,
+                    y: -10,
+                    radius: Math.random() * 4 + 2,
+                    speedY: Math.random() * 1 + 0.5,
+                    speedX: Math.random() * 1 - 0.5
+                };
+            }
+
+            // Limit the number of snowflakes on screen at once
+            const maxSnowflakes = 22;
+            let snowflakes = [];
+            const spawnDelay = 1000; // spawn interval in milliseconds
+
+            // Spawn a new snowflake if we're below the maximum count
+            function spawnSnowflake() {
+                if (snowflakes.length < maxSnowflakes) {
+                    snowflakes.push(createSnowflake());
+                }
+            }
+
+            // Periodically attempt to spawn a new snowflake
+            setInterval(spawnSnowflake, spawnDelay);
+
+            // Main animation loop
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+  
+                // Update and draw each snowflake
+                for (let i = snowflakes.length - 1; i >= 0; i--) {
+                    let flake = snowflakes[i];
+                    flake.y += flake.speedY;
+                    flake.x += flake.speedX;
+    
+                    ctx.beginPath();
+                    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = "black";
+                    ctx.fill();
+    
+                    // Remove snowflake if it has left the viewport
+                    if (flake.y - flake.radius > height) {
+                        snowflakes.splice(i, 1);
+                    }
+                }
+  
+                requestAnimationFrame(animate);
+            }
+            animate();
+        </script>
+    </body>
+</html>

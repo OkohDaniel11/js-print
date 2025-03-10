@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="keywords" content="">
+        <title>Interactivity</title>
+        <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+        <link rel="shortcut icon" href="./favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="./favicon/site.webmanifest" />
+        <link href='https://fonts.googleapis.com/css?family=Italiana' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Instrument Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="jsandcss/main.css">
+    </head>
+    <body>
+         <!--Navbar-->
+         <header>
+            <div class="logo">
+                <a href="index.html" >
+                    <p>Sevi</p>
+                </a>
+            </div>
+            <div class="hamburger-menu" id="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="homepage.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="aboutMe.html">About Me</a>
+                    </li>
+                    <li>
+                        <a href="previews.html">Previews</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="reg">
+                <ul class="registration">
+                   <a href="#" onclick="popUP()">
+                       Sign In
+                   </a>
+                   <a href="signup.html" onclick="popIN()">
+                       Sign up
+                   </a>
+               </ul>
+           </div>
+        </header>
+        <!--Pop-UP-Overlay-->
+        <div id="popupOverlay"></div>
+
+        <!--Pop-Up-Content-->
+        <div class="inner">
+            <div id="popup">
+                <div class="pop-header">
+                    <h2>Login</h2>
+                    <button onclick="closeX()" class="closePopup">&#215;</button>
+                </div>
+                <div class="pop-table">
+                    <input class="popinput" type="email" name="email" placeholder="Enter Email Address!">
+                    <br><br>
+                    <input class="popinput"  type="password" name="password" placeholder="Enter Password!">
+                    <br><br>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Remember</label>
+                    <a href="#">forgot password</a>
+                </div>
+                <br>
+                <div class="popdirectory">
+                    <input type="submit" id="border-login" value="Login!">
+                    <a href="signup.html">Sign up</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Preview Title-->
+        <div class="titlepreviews">
+            <h1 class="Prev">Previews</h1>
+        </div>
+
+        <!--Slid Box Preview-->
+        <div class="prevHeadbox">
+            <div class="outline un" >
+                <span class="arrow " onclick="slide('left')">
+                    &#129168;
+                </span>
+            </div>
+            <div class="divslidBox">
+                <div class="slidBox one" 
+                onclick="window.location.href=
+                'index.html'"></div>
+                <div class="slidBox two"></div>
+                <div class="slidBox three"></div>
+                <div class="slidBox four"></div>
+                <div class="slidBox five"></div>
+                <div class="slidBox six"></div>
+                <div class="slidBox seven"></div>
+                <div class="slidBox eight"></div>
+                <div class="slidBox nine"></div>
+                <div class="slidBox ten"></div>
+                <div class="slidBox eleven"></div>
+                <div class="slidBox twelve"></div>
+                <div class="slidBox thirteen"></div>
+                <div class="slidBox fourteen"></div>
+                <div class="slidBox fifteen"></div>
+                <div class="slidBox sixteen"></div>
+            </div>
+            <div class="outline do" >
+                <span class="arrow " onclick="slide('right')">
+                    &#129170;
+                </span>  
+            </div>
+        </div>
+
+        <!--Preview Centre-->
+        <div class="prevCentre">
+            <div class='topPrev'>
+                <div class="rightBox pin">
+                    <div>
+                        <h2 class="rightHeader him">
+                            <span class="threeSec him">
+                                a wolf 
+                            </span>
+                            <span class="oneSec him">
+                                amongst
+                            </span>
+                            <span class="twoSec him"> 
+                                sheeps
+                            </span>
+                        </h2>
+                    </div>
+                    <div class="paraOverlay">
+                        <p class="para kon">the watchful hunter</p>
+                    </div>
+                </div>
+                <div class="leftBox pin">
+                    <h2 class="leftHeader him">
+                        <span class="him">
+                            mamba 
+                        </span>
+                        <br>
+                        <span class="him">
+                            mentality
+                        </span>
+                    </h2>
+                    <div class="paraOverlay">
+                        <p class="para lon">to win</p>
+                    </div>
+                </div>
+            </div>
+            <div class='moveUp'>
+                <div class='middlePrev'>
+                    <div class="gridPrev">
+                        <div class="boxesss fin pin">
+                            <div class="gridBox him">
+                               <h2>is money the root of evil</h2> 
+                            </div>
+                        </div>
+                        <div class="boxesss lin pin">
+                            <div class=" gridBox him">
+                                 <h2>late nights moonlight</h2>
+                            </div>
+                        </div>
+                        <div class="boxesss rin pin">
+                            <div class="gridBox him">
+                                <h2>too never give up</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kin pin">
+                        <div class="gridBox him">
+                             <h2>midnight drive fuel stops</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="lastPrev">
+                    <div class="lastlbox pin">
+                        <div>
+                           <h2 class="him">
+                                <span class="lim">m</span>
+                                <span class="lim">u</span>
+                                <span class="lim">s</span>
+                                <span class="lim">i</span>
+                                <span class="lim">c</span>
+                            </h2> 
+                        </div>
+                        <div class="paraOverlay">
+                            <p class="para lon">my peace</p>
+                        </div>
+                    </div>
+                    <div class="lastlbox rig pin">
+                        <div>
+                           <h2 class="him lim" >lets explore</h2>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Footer-->
+        <footer>
+            <div class="footerflex">
+                <div class="footertable">
+                    <span>
+                        <a href="#">
+                            Contact
+                        </a>
+                    </span>
+                    <br>
+                    <span>
+                        <a href="#">
+                            Terms and Conditions
+                        </a>
+                    </span>
+                </div>
+                <div class="socialmedia">
+                    <div class="icons">
+                        <a href="#" class="fa fa-facebook"><span>Facebook</span></a>
+                        <a href="#" class="fa fa-twitter"><span>X</span></a>
+                        <a href="#" class="fa fa-instagram"><span>Instagram</span></a>
+                        <a href="#" class="fa fa-reddit"><span>Reddit</span></a>
+                        <a href="#" class="fa fa-linkedin"><span>Linkedin</span></a>
+                    </div>
+                </div>
+                <div class="footertabletwo">
+                    <div>
+                        <p>
+                            NewsLetter!
+                        </p>
+                    </div>
+                    <div >
+                        <input type="email" name="email" id="newsLetteremail" placeholder="Enter Email Address...">
+                        <div class="footertablethree">
+                            <input type="submit" value="Subscribe!" class="sub" onclick="subscribeUser()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="jsandcss/main.js"></script>
+    </body>
+</html>
